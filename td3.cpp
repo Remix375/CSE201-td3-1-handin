@@ -90,6 +90,9 @@ bool simulate_projectile(const double magnitude, const double angle,
   hit_target = false;
   hit_obstacle = false;
   while (y >= 0 && (! hit_target) && (! hit_obstacle)) {
+    telemetry = append_to_array(t, telemetry, telemetry_current_size, telemetry_max_size);
+    telemetry = append_to_array(x, telemetry, telemetry_current_size, telemetry_max_size);
+    telemetry = append_to_array(y, telemetry, telemetry_current_size, telemetry_max_size);
     double * target_coordinates = find_collision(x, y, targets, tot_targets);
     if (target_coordinates != NULL) {
       remove_target(targets, tot_targets, target_coordinates);
@@ -101,9 +104,7 @@ bool simulate_projectile(const double magnitude, const double angle,
       y = v0_y * t  - 0.5 * g * t * t;
       x = v0_x * t;
     }
-    telemetry = append_to_array(t, telemetry, telemetry_current_size, telemetry_max_size);
-    telemetry = append_to_array(x, telemetry, telemetry_current_size, telemetry_max_size);
-    telemetry = append_to_array(y, telemetry, telemetry_current_size, telemetry_max_size);
+
   }
 
   return hit_target;

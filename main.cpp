@@ -30,11 +30,10 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-#if GRADING != 0
+#if GRADING != 1
   // START OF THE CUSTOM CODE SECTION
   // This code will be executed only if you set GRADING to a value different from 1
 
-    std::cout << "online message!" << std::endl;
 
   {
   }
