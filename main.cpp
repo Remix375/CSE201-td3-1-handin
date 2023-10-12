@@ -33,7 +33,9 @@ int main(int argc, char* argv[])
 #if GRADING != 0
   // START OF THE CUSTOM CODE SECTION
   // This code will be executed only if you set GRADING to a value different from 1
-    std::cout << "A better message" << std::endl;
+
+    std::cout << "A better New initial message" << std::endl;
+
   {
   }
   // END OF THE CUSTOM CODE SECTION
